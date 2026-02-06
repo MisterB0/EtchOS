@@ -1,0 +1,54 @@
+Troubleshooting — EtchOS (end user)
+
+1) Quick start
+- Run the program from a real terminal (PowerShell, Windows Terminal or cmd):
+  python "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.6\main.py"
+- Use arrow keys to navigate, Enter to open, Backspace to go up, q or Esc to exit.
+
+2) If the app immediately exits or is blank
+- Don't run inside the VS Code Debug Console. Use an integrated terminal (Terminal tab) or an external terminal.
+- Check test.log (project root) for exceptions recorded by the harness.
+
+3) Common errors and fixes
+- "_curses.error: addwstr() returned ERR" or weird drawing:
+  * Terminal too small. Increase the terminal window (more rows/columns) or reduce the font size.
+  * Use a larger terminal buffer — the UI writes fixed-position boxes and needs space.
+
+- "NameError" or missing function errors:
+  * These are developer issues (missing functions or typos). Copy the exact traceback from test.log and attach it when reporting.
+
+- PermissionError when listing directories:
+  * The File Manager skips unreadable folders. To inspect protected system folders run Python with elevated rights (only if you know what you're doing).
+
+- Missing Wiki article (Article not found):
+  * The Wiki folder must contain "Article 1.txt", "Article 2.txt", etc. Create them with a text editor if missing.
+
+- On Windows: curses missing / ImportError:
+  * Install the compatibility package: pip install windows-curses
+
+- Typo when launching (e.g. "ython"):
+  * Use the correct command: python or the full interpreter path:
+    C:\Users\benne\AppData\Local\Microsoft\WindowsApps\python3.11.exe "path\to\main.py"
+
+4) File Manager tips
+- Shows as many items as fit the box. Resize the terminal to display more entries.
+- Directories are prefixed with [DIR].
+- Use Enter to open directories; Backspace to go to parent.
+
+5) How to collect useful debug info
+When reporting a problem include:
+- Screenshot or exact terminal output
+- Contents of test.log (project root)
+- Python version: python --version
+- Terminal size: run the one-liner below and paste output:
+  python - <<'PY'
+  import shutil
+  cols, lines = shutil.get_terminal_size()
+  print('cols=', cols, 'lines=', lines)
+  PY
+
+6) Editing and testing safely
+- Make changes in test.py to iterate quickly (it contains a harness).
+- When ready, copy the working functions back into main.py.
+
+If these steps don't resolve your issue, attach test.log, describe what you did, your terminal size and Python version — that helps find the bug faster.

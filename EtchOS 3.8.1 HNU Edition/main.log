@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "username": "default user",
+      "password": ""
+    },
+    {
+      "username": "user",
+      "password": "user"
+    }
+  ],
+  "tasks": []
+}

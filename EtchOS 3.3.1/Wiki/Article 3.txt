@@ -1,0 +1,104 @@
+Update Instructions and Nodes — EtchOS
+
+Overview
+- This article explains how to update EtchOS on a terminal-based Linux distro and how to configure autostart and update nodes (multiple devices).
+
+Prerequisites
+- git, python3 (3.8+), pip, virtualenv (recommended)
+- systemd (common on Linux) or an alternative init system
+- SSH access for remote/node updates (optional)
+
+Local update (single machine)
+1. Stop the running service (if installed as systemd):
+   sudo systemctl stop etchos.service
+
+2. Pull latest source:
+   cd /path/to/etchos
+   git pull --rebase
+
+3. (Optional) Update virtualenv:
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install --upgrade pip
+   pip install -r requirements.txt
+
+4. Restart service:
+   sudo systemctl start etchos.service
+
+5. Verify logs/output:
+   sudo journalctl -u etchos.service -n 200 --no-pager
+   or run manually to inspect errors:
+   python main.py
+
+Autostart on boot (recommended: systemd service)
+- Create a service unit (run as the user that owns the project).
+
+Example /etc/systemd/system/etchos.service:
+[Unit]
+Description=EtchOS terminal UI
+After=network.target
+
+[Service]
+User=youruser
+WorkingDirectory=/home/youruser/path/to/EtchOS
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/youruser/path/to/EtchOS/venv/bin/python /home/youruser/path/to/EtchOS/main.py
+Restart=on-failure
+StandardInput=tty
+TTYPath=/dev/tty1
+TTYReset=yes
+TTYVHangup=yes
+
+Enable and start:
+sudo systemctl daemon-reload
+sudo systemctl enable etchos.service
+sudo systemctl start etchos.service
+
+Notes:
+- TTYPath/StandardInput settings make the app attach to a real TTY. For graphical terminals or multiplexers adjust accordingly.
+- For autologin on tty1, configure getty or use a systemd getty@tty1 override to auto-login the user, then systemd service can attach to that session if preferred.
+
+Node updates (multiple devices)
+Option A — Pull from central repo (recommended for small fleets)
+1. Ensure each node has SSH key with access to repo (or use HTTPS + token).
+2. Install a small update script on each node, e.g. /usr/local/bin/etchos-update:
+   #!/bin/sh
+   cd /home/youruser/path/to/EtchOS || exit 1
+   git fetch --all
+   git reset --hard origin/main
+   source venv/bin/activate
+   pip install -r requirements.txt
+   sudo systemctl restart etchos.service
+
+3. Run manually or via systemd timer / cron:
+   sudo systemctl enable --now etchos-update.timer
+   or add cron job for nightly updates.
+
+Option B — Central orchestration (for many nodes)
+- Use Ansible, Fabric or a CI job to push updates:
+  * SSH to nodes, run git pull or rsync files
+  * Restart systemd service on each node
+- Advantages: atomic rollout, rollback support, fewer SSH keys on central repo
+
+Rollback
+- Keep tags or releases in git. To rollback on a node:
+  cd /path/to/etchos
+  git fetch --all
+  git checkout <tag-or-commit>
+  pip install -r requirements.txt
+  sudo systemctl restart etchos.service
+
+Safety and logging
+- Always test updates on one device before rolling out.
+- Collect logs: journalctl -u etchos.service and test.log in project root.
+- If an update may change startup behaviour, include a failsafe to prevent lockout (e.g., stop auto-start until verified).
+
+Troubleshooting
+- App exits immediately on boot: check service unit paths, ExecStart, and user permissions.
+- Permissions errors when accessing folders: ensure service runs as a user with access.
+- Missing curses on minimal distros: install python3-curses or pip install windows-curses is for Windows only.
+
+Summary
+- Use git + virtualenv for local updates.
+- Use systemd service to autostart on boot (attach to TTY if required).
+- For multiple nodes, use per-node pull scripts or an orchestration tool (Ansible) for safe rollouts.

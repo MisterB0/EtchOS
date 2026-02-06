@@ -1,0 +1,46 @@
+Getting started — EtchOS
+
+1) Requirements
+- Python 3.8+ (3.11 recommended)
+- On Windows: pip install windows-curses
+
+2) Run the app
+- Open a real terminal (PowerShell, Windows Terminal or cmd)
+- From the project folder run:
+  python "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.6\main.py"
+
+3) Basic controls
+- ↑ ↓ : move selection
+- Enter : open directory / confirm
+- Backspace : go up one folder
+- q or Esc : exit / back
+- Resize the terminal to show more items
+
+4) Quick dev loop (safe testing)
+- Edit test.py for experiments and quick runs:
+  python "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.6\test.py"
+- When working, copy tested functions into main.py.
+
+5) Wiki articles
+- Put plain text files in the Wiki folder named "Article 1.txt", "Article 2.txt", …
+- Articles are shown in the Help / Wiki viewer.
+
+6) Logs & debugging
+- Check test.log in the project root for recorded exceptions.
+- Useful info to collect when reporting bugs:
+  * test.log contents
+  * Python version: python --version
+  * Terminal size:
+    python - <<'PY'
+    import shutil
+    cols, lines = shutil.get_terminal_size()
+    print('cols=', cols, 'lines=', lines)
+    PY
+  * Screenshot or exact terminal output
+
+7) Common fixes
+- Blank/instant exit: run in a terminal (not VSCode debug console).
+- addwstr() returned ERR: terminal too small — enlarge window.
+- Missing curses on Windows: pip install windows-curses
+
+If anything still fails, attach test.log, terminal size and Python version.

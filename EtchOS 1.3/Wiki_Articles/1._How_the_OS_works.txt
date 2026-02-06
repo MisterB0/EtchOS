@@ -1,0 +1,21 @@
+Welcome to the Article "How the OS works", this Article will cover how the
+operating system runs and how it is working.
+
+Firstly we need to understand the base structure of the operating system.
+There is:
+
+The Bootloader - He is the first thing that starts when you start the computer. 
+He also launches the UNIX- and Linux-Kernel.
+
+The Kernel - Based on the open-source database from UNIX and Linux, which builds 
+on top of UNIX. The Kernel launches the OS, in this case *TODO: OS*.
+
+*TODO: OS* - The lightweight operating system which includes: File manager, 
+system resource manager and other programs that are required to run the phyton OS.
+
+EtchOS - The Phyton based operating system that automaticly launches with the 
+Operating System.
+
+Now you know the base structure of the OS and what happens if you start the computer.
+I could go much more in deapth, but i have hobbys and no one will read this anyway.
+Thanks if you read this until here, have fun!

@@ -1,0 +1,80 @@
+=== test.py start ===
+=== test.py start ===
+=== test.py finished normally ===
+=== test.py start ===
+=== test.py finished normally ===
+=== test.py start ===
+=== test.py finished normally ===
+=== test.py start ===
+=== test.py exception ===
+Traceback (most recent call last):
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 126, in <module>
+    f.write('=== test.py start ===\n')
+    ^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\curses\__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 112, in main
+    stdscr.clear()
+    ^^^^^
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 96, in run
+    """Default run for test harness: show help centre."""
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 80, in HelpCentre_En
+    Menu_En()
+    ^^^^^^^
+NameError: name 'Menu_En' is not defined
+
+=== test.py start ===
+=== test.py exception ===
+Traceback (most recent call last):
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 127, in <module>
+    wrapper(main)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\curses\__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 113, in main
+    run()
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 97, in run
+    HelpCentre_En()
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 82, in HelpCentre_En
+    with open(flile_path, "r") as file:
+              ^^^^^^^^^^
+NameError: name 'flile_path' is not defined
+
+=== test.py start ===
+=== test.py exception ===
+Traceback (most recent call last):
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 127, in <module>
+    wrapper(main)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\curses\__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 113, in main
+    run()
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 97, in run
+    HelpCentre_En()
+  File "c:\Users\benne\OneDrive\Desktop\Projekte\Code VSC\EtchOS 3.3\test.py", line 82, in HelpCentre_En
+    with open(flile_path, "r") as file:
+              ^^^^^^^^^^
+NameError: name 'flile_path' is not defined
+
+=== test.py start ===
+=== test.py finished normally ===
+=== test.py finished normally ===
+=== test.py start ===
+=== test.py finished normally ===
+=== test.py start ===
+=== test.py start ===
+=== test.py start ===
+=== test.py start ===
+=== test.py start ===
+=== test.py start ===
+=== test.py start ===
+=== test.py start ===
+=== test.py start ===
+=== test.py finished normally ===
+=== test.py start ===
+=== test.py start ===
+=== test.py start ===
+=== test.py start ===
