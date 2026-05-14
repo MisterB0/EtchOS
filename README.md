@@ -24,10 +24,12 @@ This is an little project i worked in my coding class for. It took multiple mont
 10. Have fun!
 
 **Latest Version**
+
 The Latest Fully Working and tested Version is 3.8.1 Final.
 It includes the Latest Features and Functions.
 
 **Latest Preview**
+
 The Latest Preview is 4.0.0. 
 It is still in Development and doesent contain:
 - Logs
@@ -36,6 +38,7 @@ This Version is faster then the 3. Version because all the programs are seperate
 and easy installing of new apps. Still in work.
 
 **Naming Scheme**
+
 First Number - Big Updates
 Secound Number - Little Updates that get released individual
 Third Number - State of Development:
