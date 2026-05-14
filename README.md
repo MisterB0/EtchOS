@@ -22,3 +22,23 @@ This is an little project i worked in my coding class for. It took multiple mont
 8. Navigate to directory
 9. Start EtchOS with python main.py
 10. Have fun!
+
+**Latest Version**
+The Latest Fully Working and tested Version is 3.8.1 Final.
+It includes the Latest Features and Functions.
+
+**Latest Preview**
+The Latest Preview is 4.0.0. 
+It is still in Development and doesent contain:
+- Logs
+- Onboarding
+This Version is faster then the 3. Version because all the programs are seperated into individual files. It aims to deliver a cleaner and faster experiance for the users as well as the devs. Its build for modularity
+and easy installing of new apps. Still in work.
+
+**Naming Scheme**
+First Number - Big Updates
+Secound Number - Little Updates that get released individual
+Third Number - State of Development:
+.0 - Missing features and some bugs
+.1 - Tested or in Testing
+Final - Release Vesion
