@@ -30,10 +30,12 @@ It includes the Latest Features and Functions.
 
 **Latest Preview**
 
-The Latest Preview is 4.0.0. 
-It is still in Development and doesent contain:
+The Latest Preview is 4.1.0. 
+It is still in Development and now contains:
 - Logs
 - Onboarding
+- Log In and Log Out
+- Improved Performance
 This Version is faster then the 3. Version because all the programs are seperated into individual files. It aims to deliver a cleaner and faster experiance for the users as well as the devs. Its build for modularity
 and easy installing of new apps. Still in work.
 
