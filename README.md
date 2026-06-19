@@ -1,5 +1,5 @@
 # EtchOS
-Python Based Terminal Operating System
+Python Based Terminal Operating System with only Keyboard Support for slow hardware. Only needs python and curses to work
 
 **History**
 
@@ -18,7 +18,7 @@ This is an little project i worked in my coding class for. It took multiple mont
     3. Restart
     4. Follow setup, for arch do ’archinstall’
     5. Restart and plug usb out
-7. Download the latest EtchOS release.
+7. Download the latest EtchOS release and curses libary
 8. Navigate to directory
 9. Start EtchOS with python main.py
 10. Have fun!
