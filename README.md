@@ -25,20 +25,27 @@ This is an little project i worked in my coding class for. It took multiple mont
 
 **Latest Version**
 
-The Latest Fully Working and tested Version is 3.8.1 Final.
+The Latest Fully Working and tested Version is 4.2.0.
 It includes the Latest Features and Functions.
 
-**Latest Preview**
+**What's new in 4.2.0**
 
-The Latest Preview is 4.1.0. 
-It is still in Development and now contains:
-- Logs
-- Onboarding
-- Log In and Log Out
-- Improved Performance
+- **Window Manager**: launch multiple apps at once and run them side by side
+  - `Tab` — switch between running apps
+  - `Q` — quit the focused app
+  - `Enter`/`Space` — bring the focused app to the foreground
+  - `Esc` — return to the main menu
+- **Spreadsheet app**: edit CSV files directly in the terminal
+- **File Manager cross-app opening**: opens files in the right editor based on file extension (e.g. `.txt` in the Text Editor, `.csv` in the Spreadsheet)
+- Apps run as separate processes in the background, keeping the main menu responsive for true multitasking
+- Full curses-based UI with multi-language support (English, Deutsch, Français)
 
-This Version is faster then the 3. Version because all the programs are seperated into individual files. It aims to deliver a cleaner and faster experiance for the users as well as the devs. Its build for modularity
-and easy installing of new apps. Still in work.
+**Version History**
+
+- 4.2.0 — Window manager, Spreadsheet app, File Manager cross-app opening, background app multitasking
+- 4.1.0 — Apps split into individual files (modular), Logs, Onboarding, Log In and Log Out, improved performance
+
+Older versions (4.1.0 and below) are faster to start because each program now lives in its own file, built for modularity and easy installing of new apps.
 
 **Naming Scheme**
 

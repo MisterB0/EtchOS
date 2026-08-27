@@ -14,3 +14,14 @@ Readme:
     5. Restart and plug usb out
 
 7. Have fun!
+
+*What's new in 4.2.0*
+
+- Window Manager: run multiple apps at once
+  - Tab: switch between running apps
+  - Q: quit the focused app
+  - Enter/Space: open the focused app
+  - Esc: back to the main menu
+- Spreadsheet app for editing CSV files
+- File Manager opens files in the right app based on file extension
+- Apps run as background processes for true multitasking
